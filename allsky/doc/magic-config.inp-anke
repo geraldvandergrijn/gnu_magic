@@ -1,0 +1,36 @@
+##/year/month/day/hour/minute(GMT)
+2004
+03
+091
+23
+45
+##/Dimension/and/name/of/aerosol/climatology
+360
+180
+climatologies/aeronet_modmed.dat
+##/Dimension/and/name/of/H20/climatology
+1441
+721
+climatologies/h2oclim-era.dat
+##/name/and/dimension/of/clear/sky/LUT/DOnotCHANGE!
+luts/magic-clear.lut
+climatologies/albedo.map
+climatologies/IGBPa_2006.map
+345
+##the|name|of|the|output|files|binary|ASCIIcdl
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/out/2004/03/SISin200403312345100171810199MA
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/out/2004/03/200403312345.cdl
+##/CLOUDinterface/1CloudYeSNo/...
+1
+1 256
+3712 3712
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/test/2004/STA_v999_200403/STAin20040331234518101MA.h5.CI.XPIF
+0.0 18.0 12.0
+-0.2 1.2
+1
+#definition|of|the|region|lon-W|lon-E|lat-N|lat-S|resolution
+-30 30 0.0 49 0.1 0.1
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/out/2004/03/SIDin200403312345100171810199MA
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/out/2004/03/il200403312345100171810199MA
+/cmsaf/cmsaf-cld5/RAD_SEVIRI_HelMag/out/2004/03/CFS200403312345100171810199MA
+sarbsal

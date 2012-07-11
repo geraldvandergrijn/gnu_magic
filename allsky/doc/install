@@ -1,0 +1,45 @@
+[1]  If not already installed  on your maching please install the {\it netcdf} library (software). Netcdf is freely available, you can download it from the web (google,netcdf). Netcdf is not needed by MAGIC but recommended !
+
+[2] Download magic-vN.tar.bz2  and put it
+in the disered directory, N is the version number. 
+Uncompress it with:
+                    bunzip2 magic-vN.tar.bz2
+Afterwards unpack it using
+                    tar xvf magic-vN.tar
+
+[3] Within the chosen directory you have now a directory {MAGICvN}, 
+where N is the version number.
+In this directory you will find the source code, a pre-compiled binary and example configuration and script files. In the subdirectories {climatologies} and {luts} the needed climatologies and
+look-up table(s) are located.
+Go to the{\it MAGICvN} directory and type
+                  gcc -lm -m32 magic-vN.c -o magic-vN.exe
+
+
+
+Magic has been tested and compiled with gcc-3.3 and gcc-4.2. 
+It is important to link the mathematical library (-lm flag, or -lmathlib)
+and it might be reasonable to compile with -m32 (32 bit mode).
+The name of the executable is defined with the -o flag.
+If you use another C compiler, please look in the manual for the 
+associated flags.
+If the compilation works fine test MAGIC with
+        magic-vN.exe
+
+
+Information about the installation of {\it netcdf} on UNIX is available at: 
+
+   http://www.unidata.ucar.edu/packages/netcdf/index.html 
+
+and more detailed information how to install 
+{netcdf} is available at:
+ 
+    http://www.unidata.ucar.edu/packages/netcdf/INSTALL.html 
+ 
+Some pre-compiled binaries for different Unix based operating systems can be
+found at: 
+
+ http://www.unidata.ucar.edu/packages/netcdf/binaries.html
+
+!!!
+PLEASE READ THE MAGIC DOCUMENTATION CONTAINED IN THE MAGIC TAR FILE IN 
+ORDER TO LEARN HOW TO OPERATE MAGIC !!!!

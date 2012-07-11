@@ -1,0 +1,7 @@
+# kend1= 0 doy= 64 hour= 0 min = 0 
+ gcor= 1.076500 msza= 0.000000 mazi= 0.000000 satazi= 0.000000 satzen= 0.000000 scattangle= 0.000000 rhomax -24526.115625 pm= -20712 
+# ESD= 1.076500 rho(10,30,50,70,80,90,95)= -20712  -20712 -20712 -20712 -20712 -20712  -20712 rhomax -24526.115625 
+# WARNING Cannot open rhomax file, hence instead of the noon rhomax that of the actual slot is used,which might lead to higher uncertainty.
+# Use rhomax of actual slot -24526 
+#  sig_ground =-858 
+ 

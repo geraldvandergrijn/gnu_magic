@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE vymmap>
+<vymmap  version="1.10.0" author="" comment="" date="2009-11-03" backgroundColor="#ffffff" selectionColor="#ffff00" linkStyle="StylePolyParabel" linkColor="#0000ff" defXLinkColor="#e6e6e6" defXLinkWidth="1">
+    <mapcenter absPosX="0" absPosY="-1" hideLink="false" x1="0" y1="-1" x2="76" y2="33" incImgV="false" incImgH="false">
+        <heading >MAGIC</heading>
+        <frame  frameType="Rectangle" penColor="#000000" brushColor="#ffffff" padding="0" borderWidth="1" />
+        <branch relPosX="100" relPosY="-111" hideLink="false" x1="138" y1="-95" x2="250" y2="-68" incImgV="false" incImgH="false">
+            <heading  textColor="#000000">Documentation</heading>
+            <branch hideLink="false" x1="270" y1="-129.5" x2="402" y2="-105.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">binary output file</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The format of the binary output file seems not to be clear enoug or is missing.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">No header, float, xdim,ydim, only G as matriy, lineXcolumns</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p></body></html>
+                </htmlnote>
+            </branch>
+            <branch hideLink="false" x1="270" y1="-105.5" x2="405" y2="-81.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">discuss warnings</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Several users has bee disturbed by the warnings occuring during the compilation</p></body></html>
+                </htmlnote>
+            </branch>
+            <branch hideLink="false" x1="270" y1="-81.5" x2="510" y2="-57.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">discuss use on different platforms</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Chris asked how to run it on mac. </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Clarify that the compiling flags are typical for gnu cc,</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">but might be different for MAC C compiler.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Make more pre-compiled binaries ?</p></body></html>
+                </htmlnote>
+            </branch>
+            <branch hideLink="false" x1="270" y1="-57.5" x2="457" y2="-33.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">clarify effect of regird flag</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">if regrid is not true, region is ignored and only binary output is given.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">cloud-&gt; grid of cloud index</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">clear-&gt; regular lat,lon grid</p></body></html>
+                </htmlnote>
+            </branch>
+        </branch>
+        <branch relPosX="148" relPosY="103" hideLink="false" x1="186" y1="119" x2="277" y2="146" incImgV="false" incImgH="false">
+            <heading  textColor="#000000">new release</heading>
+            <branch hideLink="false" x1="297" y1="108.5" x2="384" y2="132.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">lat,lon file</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">add to the MAGIC tar file the lat,lon files</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">of the binary output</p></body></html>
+                </htmlnote>
+            </branch>
+            <branch hideLink="false" x1="297" y1="132.5" x2="465" y2="156.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">give config file as argv</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The name of the configuration file is fixed, providing it to C as argument would ease the || processing!</p></body></html>
+                </htmlnote>
+            </branch>
+        </branch>
+        <branch relPosX="0" relPosY="0" hideLink="false" x1="-71" y1="118" x2="-15" y2="145" incImgV="false" incImgH="false">
+            <heading  textColor="#000000">Coding</heading>
+            <branch hideLink="false" x1="-214" y1="107.5" x2="-91" y2="131.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">output B binary</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Currently B is only written in the CDL file </p></body></html>
+                </htmlnote>
+            </branch>
+            <branch hideLink="false" x1="-235" y1="131.5" x2="-91" y2="155.5" incImgV="false" incImgH="false">
+                <heading  textColor="#000000">get rid of warnings</heading>
+                <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Once I got rid of warnings, no need to discuss warnings within docu</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p></body></html>
+                </htmlnote>
+            </branch>
+        </branch>
+        <branch relPosX="-207" relPosY="-147" hideLink="false" x1="-169" y1="-131" x2="-55" y2="-104" incImgV="false" incImgH="false">
+            <heading  textColor="#000000">Sourceforge</heading>
+            <htmlnote  fonthint="var">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">use (take benefit) of instruments and tools provided by sourceforge</p></body></html>
+            </htmlnote>
+        </branch>
+    </mapcenter>
+    <select>bo:0,bo:2</select>
+</vymmap>

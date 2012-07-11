@@ -1,0 +1,57 @@
+Installation
+
+
+1st step: compile the OpenMTP Converter in the tools/OpenMTP directory 
+using the Makefile. Copy the executable to the exe directory.
+
+Unix commands:
+
+cd tools
+gmake
+cp OpenMTP_convert ../../exe
+
+
+2step: Compile the magicsol-v0 software in the c directory and post/export it
+to the exe directory.
+
+Unix Command:
+gcc -lm -m32 magicsol-v0.c -o ../exe/magicsol-v0.exe
+
+
+Operation:
+
+Adapt the Paths given at the beginning of the script regarding the paths
+on your machine. The purpose of the paths is briefly explaing in the  
+script. 
+
+Adapt the Year,Month etc in the shell script do loops regarding the years &
+months you would like to process. 
+Very important: It is necessary that always 13h LT regarding the time zone of 
+the satellite position is processed first (e.g. 13 GMT for Meteosat at 0,0
+degree), else the auto-calibration will fail.
+
+Run the script with CAL-MVIRI-openMTP.sh
+
+Unix command:
+
+CAL-MVIRI-openMTP.sh
+
+Check terminal output and Wait if it looks ol .................... 
+
+use show_image-mfgN.sh to make a quick look of the results:
+
+Unix command:
+show_image-byte.sh /PATH/imagename
+
+show_image-byte.sh /cmsaf/cmsaf-cld3/tmp_rad/CAL/testdir/200506/200506011300_M7_VISSN.CI.XPIF 
+
+
+
+
+
+
+
+
+
+
+

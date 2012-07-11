@@ -1,0 +1,35 @@
+##/year/month/day/hour/minute(GMT)
+2005
+06
+166
+13
+00
+##/Dimension/and/name/of/aerosol/climatology
+360
+180
+climatologies/aeronet_modmed.dat
+##/Dimension/and/name/of/H20/climatology
+1441
+721
+climatologies/h2oclim-era.dat
+##/name/and/dimension/of/clear/sky/LUT/DOnotCHANGE!
+luts/magic-clear.lut
+climatologies/albedo.map
+climatologies/IGBPa_2006.map
+345
+##the|name|of|the|output|files|binary|ASCIIcdl
+/home/lee/Downloads/Sitzung_Richard/Beispieldaten/ergebnisse/200506/output-bin
+/home/lee/Downloads/Sitzung_Richard/Beispieldaten/ergebnisse/200506/200506151300
+##/CLOUDinterface/1CloudYeSNo/...
+1
+1 256
+5000 5000
+/home/lee/Downloads/Sitzung_Richard/Beispieldaten/cloud_index_output/200506/200506151300_M7_VISSN.CI.XPIF
+0.0 18.0 25.0
+-0.2 1.2
+1
+#definition|of|the|region|lon-W|lon-E|lat-N|lat-S|resolution
+-90 90 -90.0 90 0.05 0.05
+geo/nlon.dat
+geo/nlat.dat
+geo/nsza.dat
