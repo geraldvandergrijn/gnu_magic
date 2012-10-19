@@ -1,0 +1,51 @@
+Installation
+
+
+1step: Compile the magicsol-v0 software in the c directory and post/export it
+to the exe directory.
+
+Unix Command:
+gcc -lm -m32 magicsol-v0goes.c -o ../exe/magicsol-v0goes.exe
+
+Operation:
+
+Adapt the Paths given at the beginning of the script CAL_goes.sh 
+regarding the paths on your machine. 
+The purpose of the paths is briefly explained in the  
+script. 
+
+Adapt the Year,Month etc in the shell script do loops regarding the years &
+months you would like to process. 
+Very important: It is necessary that always 13h LT regarding the time zone of 
+the satellite position is processed first (e.g. 13 GMT for Meteosat at 0,0
+degree), else the auto-calibration will fail.
+
+!! If the satellite instrument change adapt the position given after 
+the -s parameter (currently gms position), please note for GOES data -z 
+has to be 99
+
+Run the script with CAL-goes.sh
+
+Unix command:
+
+CAL_goes.sh
+
+Check terminal output and Wait if it looks ol .................... 
+
+
+use show_CAL-goes.sh to make a quick look of the results:
+
+Unix command:
+show_CAL-goes.sh /PATH/imagename
+
+
+
+
+
+
+
+
+
+
+
+

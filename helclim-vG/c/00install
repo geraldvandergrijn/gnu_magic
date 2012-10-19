@@ -1,0 +1,16 @@
+
+go to exe directory and compile with:
+gcc -lm -m32 -std=c99 ../c/magicsol-v0.c -o magicsol-v0.exe
+
+change the directories in 
+cloudindex-meteast.sh
+according to your directory structure
+
+then call
+
+nohup cloudindex-meteast.sh
+
+
+Illustrate results with
+show_image-byte.sh  $DIR$NAME.XPIF     # cloud albedo
+show_image-mfgN.sh $DIR$NAME.REF      # Clear sky reflection

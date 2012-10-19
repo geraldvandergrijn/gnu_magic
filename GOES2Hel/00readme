@@ -1,0 +1,123 @@
+
+INSTALL:
+
+compile with:
+
+gfortran -m32 -g GOESnc2Hel.f90 /usr/lib/libnetcdff.a /usr/lib/libnetcdf.a
+-I/usr/include -o GOESnc2Hel.exe 
+
+RUN with:
+
+trafo-goes.sh
+
+
+EXAMPLE  script is for GMS in 4km resolution:
+
+------------------------------>
+moyear=062003
+for day in 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 
+do 
+infile="goes09.2003."$day".012514.BAND_01.nc"
+outcdl="goes09.2003."$day".0125.cdl"
+out="goes09.2003."$day".0125.out"
+echo "\"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/$infile\"" > input-cdl.asc
+echo "\"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/info.log\"" >> input-cdl.asc
+echo "5208 2706" >> input-cdl.asc
+echo "1" >> input-cdl.asc
+echo "26 255 2003" >> input-cdl.asc
+echo "-1000" >> input-cdl.asc
+echo "\"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/$outcdl\"" >>  input-cdl.asc
+echo  "\"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/$out\"" >>  input-cdl.asc
+echo "95 180 -62 62  0.04  0.04" >>  input-cdl.asc
+echo "160 0.0" >> input-cdl.asc
+GOESnc2Hel.exe
+done
+<---------------------------------
+
+EXPLANATION: 
+
+The trafo-goes.sh writes the input-cdl.asc file and executes the program.
+input-cdl.asc is used to drive the program, to provide the needed
+input information.
+The output are binary files which can be read by Heliosat.
+The contain a standart header, hence after transformation GOES data
+(East,west,gms) could be processed by Heliosat in the same manner as
+the Meteosat images...
+!!! The directories have to be adapted to your environment before testing !!!
+!!! For GOES East, West the name core parts and perhaps, scan duration, data
+range have to be modified 
+
+
+EXAMPLE input file:
+"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/goes09.2003.152.012514.BAND_01.nc"
+"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/info.log"
+5208 2706
+1
+26 255 2003
+-1000
+"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/goes09.2003.152.0125.cdl"
+"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/goes09.2003.152.0125.out"
+95 180 -62 62  0.04  0.04
+160 0.0
+
+
+
+EXPLENATION cntenst of Input File:
+
+
+1st line: name of goes input data
+"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/goes09.2003.152.012514.BAND_01.nc"
+
+2nd line: log file
+"/cmsaf/cmsaf-rad2/data/GOESraw/gms-062003_low_res/info.log"
+
+3rd line: 
+5208 2706
+---------->
+xdim ydim, has to be take from the header of GOES nc files 
+with ncdump !!
+<----
+
+4th line: number of regions, pleas do not change !
+1
+
+5th line: 
+26 255 2003
+------------------->
+first value is the scan duration 
+the second is the maximum data range defined by the data type: e.g. byte
+255...
+the last is the year
+
+
+6th line: no data value, please keep it
+-1000
+
+
+7t, 8th line: 
+"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/goes09.2003.152.0125.cdl"
+"/cmsaf/cmsaf-rad2/data/GOESraw/regnc/goes09.2003.152.0125.out"
+---------------->
+output file names, ! the *.out is the binary file, which will be
+read by Helioclim/Heliosat
+<-
+
+9th line: 
+95 180 -62 62  0.04  0.04
+---------------->
+The orig GOES data is regridded to a regular lat,lon grid
+here the start & end longituted the start and end latitude and the grid
+resolution in x,y is expected. Note, the current version of the program
+can not deal with longitudes from -160 to 180, hence the maximum possible
+longitude value of end longitude 
+is 180, the minimum of start is -180 
+Hence gms from 95-180, then goes west starts from -18
+<-
+
+10 th line, some lat lon value within defined region, only for testing
+160 0.0
+
+
+
+
+

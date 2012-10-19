@@ -1,0 +1,22 @@
+Von: Reto.Stoeckli@meteoswiss.ch
+Gesendet: Donnerstag, 5. März 2009 16:32
+An: Richard.Mueller@dwd.de; Rebekka.Posselt@meteoswiss.ch;
+joerg.trentmann@dwd.de
+Betreff: OpenMTP Conversion to XPIF and NetCDF
+
+Anlagen: OpenMTP_convert.tar.bz2
+
+Hallo Richard,
+
+Angehängt eine neue OpenMTP_convert Version, die die XPIF's in VCS-Standard Orientation von N nach S und W nach E (Entgegengesetzt der EUMETSAT Orientation) schreibt. Somit sind wir mit den UMARF
+
+msg_ehf.c und msg_ehf.h für HELIOSAT sind tot. Es gibt jetzt die meteosat_tools.c und meteosat_tools.h. Sie beinhalten die originalen Reprojektionsroutinen von EUMETSAT (they are to blame), je eine für MFG und eine für MSG. Du wirst sie dann zusammen mit dem HELIOSAT Code von Rebekka bekommen.
+
+Spannend finde ich dass EUMETSAT bei MFG ein Pixelzentiertes Gitter gewählt hat (lon/lat 0.0/0.0 sind bei column/line 2500.5/2500.5) und bei MSG ein auf den Giterrand ausgerichtetes Gitter verwendet (lon/lat 0.0/0.0 sind bei column/line 1856.0/1856.0).
+
+Das führt bestimmt bei einigen Usern zu Verwirrung wenn sie nicht aufpassen. Auch bei mir.
+
+Rebekka: ich zeige dir morgen was ich gebastelt habe. meteosat_tools.c ist einfach in deine snow-HELIOSAT-Routine einzubauen.
+
+E schöne Abend wünscht,
+Reto

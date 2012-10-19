@@ -1,0 +1,15 @@
+Hoi Richard 
+
+Angehängt findest du eine erste Version vom OpenMTP Converter. Er sollte auf eurer Linux Maschine mit gcc und der dort installierten NetCDF Library funktionieren. Wenn das Teil zuverlässig läuft, werden wir die Routine am besten direkt in den cloudindex.c Code einbauen, aber ich behalte sie mal offline bis auf weiteres, ist das ok für dich?
+
+Der Syntax ist: OpenMTP_convert -x -n OPENMTPFILE
+
+(macht sowohl ein NetCDF und XPIF aus dem OPENMTPFILE. Die Argumente -x (XPIF) und -n (NetCDF) können auch wahlweise angegeben werden.
+
+Für Richard: Wenn du im Makefile HAS_NETCDF auf FALSE setzt, dann wird keine NetCDF Library benötigt und die NetCDF Konversion abgeschaltet.
+
+Es gibt noch Aenderungen im Code, aber du kannst den Konverter schon mal ausprobieren. Warnung: die aus Meteosat1-Meteosat7 OpenMTP konvertierten XPIF Files sind aber mit dem jetztigen cloudindex.c Code und seinen MSG-spezifischen Geolocation Routinen nicht prozessierbar da der Code von einer 3712x3712 Geometrie ausgeht.
+
+Retoeht.
+
+Retoto

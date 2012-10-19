@@ -1,0 +1,8 @@
+
+go to exe directory and compile with:
+gcc -lm -m32 -std=c99 ../c/magicsol-v0.c -o magicsol-v0.exe
+
+change the directories in 
+cloudindex-meteast.sh
+according to your directory structure
+
