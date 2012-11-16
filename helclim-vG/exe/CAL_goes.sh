@@ -5,14 +5,14 @@
  # August 2012
  #######################################################
  
-HELHOME=/home/rmueller/archive/software/magicsol-v01goes/helclim/exe
+HELHOME=/home/lee/Documents/eclipse-workspace/gnu_magic/helclim-vG/exe
 
- GZPFAD=/cmsaf/cmsaf-rad2/data/GOESraw/regnc # here are the compressed SAT images
+ GZPFAD=/home/lee/Downloads/goes/062003_regridded_decompressed # here are the compressed SAT images
  #GZPFAD=$HELHOME/in # here are the compressed Meteosat images
- PFAD=/cmsaf/cmsaf-rad2/temp1 # the uncompressed images will be mv to this directory
+ PFAD=/home/lee/Downloads/goes/magicsol_tmp # the uncompressed images will be mv to this directory
  #CIPFAD=$HELHOME/out/CI_VIS008  # here are the cloud index output files
-CIPFAD=/cmsaf/cmsaf-rad2/data/GOESCAL/test
-GPFAD=/cmsaf/cmsaf-rad2/data/GOESCAL/test 
+CIPFAD=/home/lee/Downloads/goes/magicsol_output
+GPFAD=$CIPFAD
 # here are the surface albedo images
  
 sat=goes09 
@@ -20,7 +20,7 @@ sat=goes09
 for YEAR in 2003 #2005 2006 2007 2008
 do
  #MON=11
-    for  MON in 09 #01 02 03 04 05 06 07 08 09 10 11 12   # 01 02 03 04 05   
+    for  MON in 06 #01 02 03 04 05 06 07 08 09 10 11 12   # 01 02 03 04 05   
     do
 	for HH in 01 # 13 05 06 07 08 09 10 11 12 14 15 16 17  #10 16 #11 12 13 14 15 #16 #13 #12 #09 12 15  
 # 05 06 07 08 09 10 11 12 13 14 15 16 17 
@@ -30,7 +30,7 @@ do
 	#	echo "# Year Mon hh mm " $YEAR $MON $HH $MM >> ../temp/rhomax90.out
                 echo "# Year Mon hh mm " $YEAR $MON $HH $MM >> ../temp/rhostat.out
 #15 30 45
-		for DAY in 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181
+		for DAY in {152..181} #153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181
 #01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
 #31
 		do
@@ -68,7 +68,7 @@ do
 # gms position 155 E
 $HELHOME/magicsol-v0goes.exe -c $CIPFAD -g $GPFAD -l $PFAD/liste -b $PFAD -s 155 -z 99
 
-# rm  $PFAD/liste
+rm  $PFAD/liste
 # rm $PFAD/*"_MSG_VIS008.XPIF"
 	    done
 	    sync

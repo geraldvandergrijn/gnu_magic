@@ -218,7 +218,7 @@ int main(int argc, char *argv[])
   char *cp;                         /* temporaere Werte                     */
   char zeitname[4];                 /* temporaerer ASCII-String der Zeit    */
          
-  long zahl,anzahl;
+  long zahl=0,anzahl=0;
   double cloudindex ;
   double db_hours_per_line; /* added in order to caclulate the timeoffset */
   char *channel="MFGVIS"; /* added, currently hard wired, 
@@ -293,9 +293,11 @@ int main(int argc, char *argv[])
  /* oeffnen aller Dateien, die in Liste stehen, 
     Header auswerten, Matrizen zuweisen */
   zahl=0;
+  printf("read the image file names, anzahl= %d zahl=%d feof=%d \n", anzahl,zahl,feof(list));
   while(!feof(list) && anzahl < BILDANZ ){
     /* CaP - inserting the limit of BILDANZ to avoid coredumps*/
     /* ||  anzahl < BILDANZ )        */
+    printf("read the image file names, anzahl= %d zahl=%d \n", anzahl,zahl  );
     anzahl=zahl;
     fscanf(list,"%s\r",bildfolge[anzahl].name);
     strcpy(bild,bildpathname);
@@ -310,6 +312,7 @@ int main(int argc, char *argv[])
     }
     else // regular lat lon grid expected, specific rich data format
     {
+      printf("read grid header of regular lat,lon bin file \n");
 	read_grid_header(HDL,bild,&bildfolge[anzahl].headline[0]);
          // for testing  
     }
