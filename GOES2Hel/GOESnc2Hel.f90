@@ -57,6 +57,7 @@ program GOESnc2Hel
   INTEGER :: ncid
   LOGICAL             :: readable
   byte :: bla
+  real :: bloop ! Only a dummy to test why the byte conversion doesn't work
   
 ! needed for netcdf files
   
@@ -497,7 +498,13 @@ program GOESnc2Hel
      DO j=3,ymdim-2   
 ! image(i,j)=transfer(bla,var1(i,j,1))  
     ! image(i,j)=varvalue(1,i,j)1(i,j,1) 
-    image(i-2,j-2)=(255/head%vmax)*value(1,i,j)
+!    image(i-2,j-2)=TRANSFER(bla, (255/head%vmax*value(1,i,j)))
+!   Here the problem was that the values weren't in the bit range. They are
+!   converted here. The literal 255.0 is used because otherwise the division
+!   gave back an integer, which was 0.
+    image(i-2,j-2)=NINT(255.0/head%vmax*value(1,i,j))
+!   Here we can use the literal 255 because the multiplication result is real.
+!    image(i-2,j-2)=NINT(255*value(1,i,j)/head%vmax)
 !transfer(bla,value(1,i,j))
 !(255/head%vmax)*value(1,i,j) ! in order to provide always values in the byte range 0-256
     END DO
