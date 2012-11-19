@@ -1,10 +1,10 @@
 # Set month and year
 moyear=062003
 # Set days to be processed
-for day in 152 #153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 
+for day in {152..181}
 do
 	# Set hours
-	for hour in 00 #01 02 03 04 05 06 07 08 09 11 12 13 14 15 16 17 18 19 20 21 22 23
+	for hour in 01 #01 02 03 04 05 06 07 08 09 11 12 13 14 15 16 17 18 19 20 21 22 23
 	do
 		# Set input paths
 		infile="goes09.2003."$day"."$hour"2514.BAND_01.nc"
@@ -30,5 +30,7 @@ do
 		# These values are only defined for testing
 		echo "160 0.0" >> input-cdl.asc
 		GOESnc2Hel.exe
+		# Remove ASCII CDL file
+		rm "/home/lee/Downloads/goes/062003_regridded_decompressed/goes09.2003."$day"."$hour"25.cdl"
 	done
 done
