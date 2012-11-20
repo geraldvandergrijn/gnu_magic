@@ -388,87 +388,88 @@ program GOESnc2Hel
      END DO
   
 
-! open the respective output file
-  write(*,*) "open the output file"
-    
-  INQUIRE (UNIT=iu,OPENED=readable,iostat=iostat)
-  !write(*,*) "verdammt", iu, readable
-  DO WHILE ( readable )
-     iu = iu+1
-     INQUIRE (UNIT=iu,OPENED=readable)
-  END DO
-  iu_out=iu
-  OPEN(UNIT=iu_out,file=outfname(k))
-  IF(iostat /= 0) THEN
-     CALL printlog('E',iostat,'matchup',trim('ERROR OPENING FILE '//outfname(k)))
-     STOP 202
-  ENDIF
+! open the respective output file - turned off because the only
+! output file needed is the binary, which is written below.
+!  write(*,*) "open the output file"
+!
+!  INQUIRE (UNIT=iu,OPENED=readable,iostat=iostat)
+!  !write(*,*) "verdammt", iu, readable
+!  DO WHILE ( readable )
+!     iu = iu+1
+!     INQUIRE (UNIT=iu,OPENED=readable)
+!  END DO
+!  iu_out=iu
+!  OPEN(UNIT=iu_out,file=outfname(k))
+!  IF(iostat /= 0) THEN
+!     CALL printlog('E',iostat,'matchup',trim('ERROR OPENING FILE '//outfname(k)))
+!     STOP 202
+!  ENDIF
   
  ! write header and data to first output  file
 
 
-  write(iu_out,*) "netcdf tmp {" 
-  write(iu_out,*)  "dimensions:"
-  write(iu_out,*) "lat =", ymdim-4, ", lon =",xmdim-4,", time = unlimited ;"
-  write(iu_out,*) "variables:"
-  write(iu_out,*) "float lat(lat), lon(lon);"
-  write(iu_out,*) 	"float Z(lat,lon);"
-   write(iu_out,*)  "// variable attributes"
-  write(iu_out,*) 'lat:long_name = "latitude";'
-  write(iu_out,*) 'lat:units = "degree";'
-  write(iu_out,*)  'lon:long_name = "longitude";'
-  write(iu_out,*) 'lon:units = "degrees";'
-  write(iu_out,*) 'Z:units = "Watt";'
-  write(iu_out,*) "Z:valid_range = 0., 1400.;"
-  write(iu_out,*)  "data:"
-  write(iu_out,*) "lat="
-  DO jj=3,ymdim-2
-   if (jj .EQ. (ymdim-2)) then
-      WRITE(iu_out,*) latrev(jj),";"
-   else
-      WRITE(iu_out,*) latrev(jj),","
-   endif
-  END DO
-
-  write(iu_out,*) "lon="
-  DO ii=3,xmdim-2
-   if (ii .EQ. (xmdim-2)) then
-      WRITE(iu_out,*) lonrev(ii),";"
-   else
-      WRITE(iu_out,*) lonrev(ii),","
-   endif
-  END DO
-   
-   
-
-  ! write product array without a 2 bixel border in order to avoid lots of undefined values 
-
-  
-
-  write(iu_out,*) "Z="
-  DO jj=3,ymdim-2
-     DO ii=3,xmdim-2
-       ! WRITE(iu_out,'(F7.3,X,F7.3,X,F12.5)') lonrev(ii),latrev(jj),(value(k,ii,jj))
-        if (ii .EQ. (xmdim-2) .AND. jj .EQ. (ymdim-2)) then
-           WRITE(iu_out,*) value(k,ii,jj),";"
-            WRITE(iu_out,*) "}"
-        else
-           WRITE(iu_out,*) value(k,ii,jj),","
-        endif
-    END DO
-  END DO
-
-
+!  write(iu_out,*) "netcdf tmp {"
+!  write(iu_out,*)  "dimensions:"
+!  write(iu_out,*) "lat =", ymdim-4, ", lon =",xmdim-4,", time = unlimited ;"
+!  write(iu_out,*) "variables:"
+!  write(iu_out,*) "float lat(lat), lon(lon);"
+!  write(iu_out,*) 	"float Z(lat,lon);"
+!   write(iu_out,*)  "// variable attributes"
+!  write(iu_out,*) 'lat:long_name = "latitude";'
+!  write(iu_out,*) 'lat:units = "degree";'
+!  write(iu_out,*)  'lon:long_name = "longitude";'
+!  write(iu_out,*) 'lon:units = "degrees";'
+!  write(iu_out,*) 'Z:units = "Watt";'
+!  write(iu_out,*) "Z:valid_range = 0., 1400.;"
+!  write(iu_out,*)  "data:"
+!  write(iu_out,*) "lat="
+!  DO jj=3,ymdim-2
+!   if (jj .EQ. (ymdim-2)) then
+!      WRITE(iu_out,*) latrev(jj),";"
+!   else
+!      WRITE(iu_out,*) latrev(jj),","
+!   endif
+!  END DO
+!
+!  write(iu_out,*) "lon="
+!  DO ii=3,xmdim-2
+!   if (ii .EQ. (xmdim-2)) then
+!      WRITE(iu_out,*) lonrev(ii),";"
+!   else
+!      WRITE(iu_out,*) lonrev(ii),","
+!   endif
+!  END DO
+!
+!
+!
+!  ! write product array without a 2 bixel border in order to avoid lots of undefined values
+!
+!
+!
+!  write(iu_out,*) "Z="
+!  DO jj=3,ymdim-2
+!     DO ii=3,xmdim-2
+!       ! WRITE(iu_out,'(F7.3,X,F7.3,X,F12.5)') lonrev(ii),latrev(jj),(value(k,ii,jj))
+!        if (ii .EQ. (xmdim-2) .AND. jj .EQ. (ymdim-2)) then
+!           WRITE(iu_out,*) value(k,ii,jj),";"
+!            WRITE(iu_out,*) "}"
+!        else
+!           WRITE(iu_out,*) value(k,ii,jj),","
+!        endif
+!    END DO
+!  END DO
+!
+!
 ! close first output file
-  
-  CLOSE(iu_out,iostat=iostat)
-  IF(iostat /= 0) THEN
-     CALL printlog('E',iostat,'matchup',trim('ERROR CLOSING FILE '//outfname(k)))
-     STOP 202
-  ENDIF
-  
-
-  write(*,*) "Hurra, erster fertig"
+!
+!  CLOSE(iu_out,iostat=iostat)
+!  IF(iostat /= 0) THEN
+!     CALL printlog('E',iostat,'matchup',trim('ERROR CLOSING FILE '//outfname(k)))
+!     STOP 202
+!  ENDIF
+!
+!
+!  write(*,*) "Hurra, erster fertig"
   ! open second output file
  !!!! WRITEIT
 
