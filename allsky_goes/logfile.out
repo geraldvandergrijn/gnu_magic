@@ -1,0 +1,30 @@
+year,month,day of year,hour,minute: 
+ 2003 6 152 5 45 
+the dimension of aerosols and h2o climatology 
+360 180 1441 721 
+the name of the aerosol, h2o  and surface albedo and landused climatology 
+climatologies/aeronet_modmed.dat
+ climatologies/h2oclim-era.dat
+ climatologies/albedo.map
+ climatologies/IGBPa_2006.map
+the dimension of the LUT parameter, ngg,nssa,naod,nh2o,no3: 
+2 3 10 
+ 18 3 
+the name of the look-up table: luts/magic-clear.lut 
+the names of the output files: 
+ out/goes12.2003.152.0545G.out out/goes12.2003.152.0545G.out.cdl 
+calculation for cloudy sky 0=false, 1=true: 1 
+if cloud true:output for regrided area  0=false, 1=true: 1 
+The defined sub-region, longitude:start/end latitude: start/end, x,y-resolution 
+-134.000000 -17.000000 -62.000000 62.000000 0.100000 0.100000 
+the following parameter are only needed if the cloud option is used 
+the file containing the cloud information: 
+ /home/lee/Downloads/local/goes-e/062003_cloud_albedo/goes12.2003.152.0545CI.XPIF 
+the dimension of the cloud file xdim,ydim= 3712 3712 
+The headerlength is 256 and the size of the array elements is 2 
+aperture = 99.000000 satpos= 0.000000 scanning time for 1 line 12.000000
+the heliosat cloud index ranges from -0.2 to 1.2 
+the used range is nmin, nmax -0.200000 1.200000currently not in use 
+ geo/nlon.dat
+ geo/nlat.dat
+ geo/nsza.dat

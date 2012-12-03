@@ -1,0 +1,35 @@
+##/year/month/day/hour/minute(GMT)
+2003
+06
+152
+05
+45
+##/Dimension/and/name/of/aerosol/climatology
+360
+180
+climatologies/aeronet_modmed.dat
+##/Dimension/and/name/of/H20/climatology
+1441
+721
+climatologies/h2oclim-era.dat
+##/name/and/dimension/of/clear/sky/LUT/DOnotCHANGE!
+luts/magic-clear.lut
+climatologies/albedo.map
+climatologies/IGBPa_2006.map
+345
+##the|name|of|the|output|files|binary|ASCIIcdl
+out/goes12.2003.152.0545G.out
+out/goes12.2003.152.0545G.out.cdl
+##/CLOUDinterface/1CloudYeSNo/...
+1
+2 256
+3712 3712
+/home/lee/Downloads/local/goes-e/062003_cloud_albedo/goes12.2003.152.0545CI.XPIF
+0.0 99 12.0
+-0.2 1.2
+1
+#definition|of|the|region|lon-W|lon-E|lat-N|lat-S|resolution
+-134 -17 -62.0 62 0.1 0.1
+geo/nlon.dat
+geo/nlat.dat
+geo/nsza.dat

@@ -1,0 +1,105 @@
+##year,month,dayOfyear,hour,minute(GMT)
+2003
+152
+95
+12
+00
+##Dimension|and|name|of|aerosol|climatology
+360   
+180
+climatologies/aeronet_modmed.dat
+##Dimension|and|name|of|H20|climatology
+144
+73
+climatologies/h2oclim.dat
+##name|and|of|LUT|albedo|and|landuse|map|DOnotCHANGE!!
+luts/magic-clear.lut
+climatologies/albedo.map
+climatologies/IGBPa_2006.map
+345
+##the|name|of|the|output|files|binary|ASCIIcdl
+out/output-bin
+out/output-cdl
+##ClOUDinterface|1stflag:cloudyes>1,cloudno>0
+1
+1 256
+3712 3712
+/home/lee/Downloads/local/goes-e/062003_cloud_albedo/goes12.2003.152.1745CI.XPIF
+0.0  99 12.0
+-0.2 1.2
+1
+##definition|of|the|region|lon-W|lon-E|lat-N|lat-S|resolution
+-134 -17 -62.0 62 0.1 0.1
+geo/nlon.dat
+geo/nlat.dat
+geo/nsza.dat
+
+
+
+LINE:
+1      -> comment line for the user.
+2      -> the year
+3      -> the month
+4      -> the day of the year
+5      -> the hour (GMT)
+6      -> the minute (GMT)
+7      -> comment line
+8      -> x-dimension (longitude dimension)
+9      -> y-dimension (latitude dimension)
+10     -> the name of the aerosol climatology
+11     -> comment line
+12     -> x-dimension (longitude dimension) 
+13     -> y-dimension (latitude dimension)
+14     -> the name of the H20(g) climatology
+15     -> comment line
+16     -> name of LUT, do not change !
+17     -> name of albedo map, do not change
+18     -> name of IGBP landuse mao, do not change.
+19     -> the ozone value, currently no ozone correction implemented.
+20     -> comment line 
+21     -> name of binary output file
+22     -> name of ascii output file
+23     -> comment line 
+24     -> flag cloud calculation: 1:yes 0:no
+25     -> data type in byte and header length of binary cloud file
+26     -> x and y dimension of the cloud input
+27     -> name of file containing cloud input  
+28     -> position and aperture angle of satellite, scanning time for a line 
+29     -> scale information of cloud index, see documentation for details.
+30     -> regrid, only needed and applied if cloud flag is yes
+31     -> comment line 
+32     -> the definition of the region (REG)
+33     -> for later versions, external latitude information
+34     -> and longitude information 
+35     -> and external sza information, currently not implemented.
+\end{small}
+\end{verbatim}
+\end{small}
+
+The region is defined by the longitude (west than east of the centrum) the
+latitude (south than north from the centrum) and the resolution in degree,
+longitude and latidute. West of zero longitude is negative and South of zero latitude 
+is negative.
+
+####
+two options for aerosol climatology:
+######KINEE/MPI/Aerocom:
+360   
+180
+climatologies/aeronet_modmed.dat
+######GADS/OPAC:
+144
+73
+climatologies/gads-nceprh.dat
+
+
+#####
+two options for h2o climatology
+#########NCEP
+144
+73
+climatologies/h2oclim.dat
+#########ERA
+1441
+721
+climatologies/h2oclim-era.dat

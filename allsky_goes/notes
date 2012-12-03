@@ -1,0 +1,16 @@
+Compile with gcc -lm -m32 magic-v0x90.c -o ../magic.exe
+
+Config file is ../magic-config.imp. The first few lines are written from the
+file's header. Anpassen:
+21, 27, 32
+In Zeile 22 kann man auch ein CDL angeben - die Textdatei kann mit ncgen in ein
+netCDF konvertiert werden.
+
+Aufpassen, dass die Klimatologien im Hauptverzeichnis liegen (im selben wie die
+        exe).
+
+Fehler: Existieren die Outputverzeichnisse? Sind die Dimensionen richtig? Das
+sollte alles automatisch erkannt werden, aber im Zweifelfall ist es immer besser
+das zu überprüfen.
+
+Wasserdampfklimatologien sind ERA-Interim!
